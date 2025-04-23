@@ -147,7 +147,7 @@ section.etc p{
     text-align: center;
 
 }
-button.btn {
+.btn {
     background-color: rgb(130, 127, 127);
     border-radius: 8px;
     border-width: 0;
