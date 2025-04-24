@@ -36,7 +36,7 @@ p {
 nav {
     z-index: 0;
     height: 20px;
-    padding: 20px;
+    padding: 30px;
     background-color: #02060A;
     color: #ffff;
     display: flex;
@@ -46,6 +46,7 @@ nav {
 }
 nav img{
     padding-right: 10px;
+    padding-top: 5px;
 }
 main {
     display: flex;
