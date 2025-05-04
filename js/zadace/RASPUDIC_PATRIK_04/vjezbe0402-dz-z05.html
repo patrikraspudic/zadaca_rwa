@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadatak 5</title>
+</head>
+<body>
+    <form onsubmit="return validirajRegistraciju()">
+        <label for="registracija">Unesite registarsku oznaku:</label>
+        <input type="text" id="registracija" required>
+        <button type="submit">Validiraj</button>
+    </form>
+
+    <script>
+        function validirajRegistraciju() {
+            const unos = document.getElementById("registracija").value.trim().toUpperCase();
+            
+            if (unos.length !== 9) {
+                alert("Registarska oznaka nije ispravna.");
+                return false;
+            }
+
+            const prvoSlovo = unos[0];
+            if (prvoSlovo !== 'A' && prvoSlovo !== 'J' && prvoSlovo !== 'E' && prvoSlovo !== 'K' && prvoSlovo !== 'M' && prvoSlovo !== 'O' && prvoSlovo !== 'T') {
+                alert("Registarska oznaka nije ispravna.");
+                return false;
+            }
+
+            if (isNaN(unos[1]) || isNaN(unos[2])) {
+                alert("Registarska oznaka nije ispravna.");
+                return false;
+            }
+
+            if (unos[3] !== '-') {
+                alert("Registarska oznaka nije ispravna.");
+                return false;
+            }
+
+            const petoSlovo = unos[4];
+            if (petoSlovo !== 'A' && petoSlovo !== 'J' && petoSlovo !== 'E' && petoSlovo !== 'K' && petoSlovo !== 'M' && petoSlovo !== 'O' && petoSlovo !== 'T') {
+                alert("Registarska oznaka nije ispravna.");
+                return false;
+            }
+
+            if (unos[5] !== '-') {
+                alert("Registarska oznaka nije ispravna.");
+                return false;
+            }
+
+            if (isNaN(unos[6]) || isNaN(unos[7]) || isNaN(unos[8])) {
+                alert("Registarska oznaka nije ispravna.");
+                return false;
+            }
+
+            alert("Registarska oznaka je ispravna.");
+            return true;
+        }
+    </script>
+</body>
+</html>

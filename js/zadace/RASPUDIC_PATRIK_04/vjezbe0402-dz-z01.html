@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadatak 1</title>
+</head>
+<body>
+    <script type="text/javascript">
+        const brojevi = prompt("Unesite brojeve odvojene zarezom")
+        .split(",")
+        .map((c) => c.trim())
+        .map((c) => parseInt(c));
+      if (brojevi.some((c) => isNaN(c))) {
+        alert("Jedan od unesenih znakova nije broj!");
+      } else {
+        const aritmeticka = brojevi.reduce((a, b) => a + b) / brojevi.length;
+        const geometrijska = Math.pow(
+          brojevi.reduce((a, b) => a * b),
+          1 / brojevi.length
+        );
+
+        document.write(`<p>Aritmetička sredina: ${aritmeticka}</p>`);
+        document.write(`<p>Geometrijska sredina: ${geometrijska}</p>`);
+      }
+    </script>
+</body>
+</html>

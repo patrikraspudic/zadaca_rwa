@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadatak 6</title>
+</head>
+<body>
+    <form>
+        <input type="number" id="broj1" placeholder="Prvi broj" required>
+        <input type="number" id="broj2" placeholder="Drugi broj" required>
+        <input type="text" id="rezultat" readonly>
+        <button type="button" onclick="zbroji()">Zbroji</button>
+    </form>
+
+    <script>
+        function zbroji() {
+            const broj1 = document.getElementById("broj1").value;
+            const broj2 = document.getElementById("broj2").value;
+            
+            if (broj1 === "" || broj2 === "" || isNaN(broj1) || isNaN(broj2)) {
+                document.getElementById("rezultat").value = "Unesite valjane brojeve.";
+                return;
+            }
+
+            const rezultat = parseFloat(broj1) + parseFloat(broj2);
+            document.getElementById("rezultat").value = rezultat;
+        }
+    </script>
+</body>
+</html>

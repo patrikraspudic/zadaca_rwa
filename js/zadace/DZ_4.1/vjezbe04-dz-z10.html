@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcije</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function ispisiSlucajne(min, max) {
+        for (let i = 0; i < 5; i++) {
+            let slucajniBroj = Math.floor(Math.random() * (max - min + 1) + min);
+            console.log(slucajniBroj);
+            document.write(slucajniBroj);
+            if (i < 4) {
+                document.write(", ");
+            } else {
+                document.write("<br />");
+            }
+        }
+    }
+
+      ispisiSlucajne(1, 100);
+    </script>
+</body>
+</html>

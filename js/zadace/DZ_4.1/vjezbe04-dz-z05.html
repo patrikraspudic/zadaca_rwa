@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcije</title>
+</head>
+<body>
+    <script type="text/javascript">
+        const objekt1 = {
+            firstName:"Marko",
+            lastName:"Maric",
+            age:40,
+            eyeColor:"black"
+        };
+        const objekt2 ={
+            firstName:"Ivo",
+            lastName:"Ivic",
+            age:30,
+            eyeColor:"blue"
+        };
+        const objekt3 ={
+            firstName:"Ana",
+            lastName:"Anic",
+            age:25,
+            eyeColor:"green"
+        };
+        const polje = [objekt1,objekt2,objekt3];
+        for(var i in polje){
+            document.write('Osoba ' + i + ': ' + polje[i].firstName + ' ' + polje[i].lastName + ', dob: ' + polje[i].age + ' godina, boja očiju: ' + polje[i].eyeColor + '<br/>');
+        }
+    </script>
+</body>
+</html>

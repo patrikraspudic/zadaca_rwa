@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcije</title>
+</head>
+<body>
+    <script type="text/javascript">
+        const anonimna = function (n) {
+            if (typeof n === 'number') {
+                return n * n;
+            } else {
+                return n + " nije broj!";
+            }
+        };
+
+        console.log(anonimna(5));
+        document.write(anonimna(5) + "<br />");
+
+        console.log(anonimna("pet"));
+        document.write(anonimna("pet") + "<br />");
+    </script>
+</body>
+</html>

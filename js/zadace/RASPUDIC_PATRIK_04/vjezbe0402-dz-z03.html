@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zadatak 3</title>
+</head>
+<body>
+    <h2>Unesi ocjenu (1-5):</h2>
+    <form id="ocjenaForma">
+        <input type="text" id="ocjenaInput" placeholder="Unesi broj od 1 do 5">
+        <button type="submit">Provjeri</button>
+    </form>
+
+    <script>
+        document.getElementById("ocjenaForma").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const ocjena = parseInt(document.getElementById("ocjenaInput").value.trim());
+
+            let poruka = "";
+
+            switch (ocjena) {
+                case 1:
+                    poruka = "Nedovoljan";
+                    break;
+                case 2:
+                    poruka = "Dovoljan";
+                    break;
+                case 3:
+                    poruka = "Dobar";
+                    break;
+                case 4:
+                    poruka = "Vrlo dobar";
+                    break;
+                case 5:
+                    poruka = "Odličan";
+                    break;
+                default:
+                    poruka = "Molimo unesite broj od 1 do 5.";
+            }
+
+            alert(poruka);
+        });
+    </script>
+</body>
+</html>

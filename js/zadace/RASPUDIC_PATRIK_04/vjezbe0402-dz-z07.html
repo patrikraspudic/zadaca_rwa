@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zadatak 7</title>
+</head>
+<body>
+  
+    <form onsubmit="izracunajGodine(event)">
+      <label>Unesite dan (01-31)
+        <input type="text" id="dan" required>
+      </label>
+      <br><br>
+      <label>Unesite mjesec (01-12)
+        <input type="text" id="mjesec" required>
+      </label>
+      <br><br>
+      <label>Unesite godinu (npr. 2000)
+        <input type="text" id="godina" required>
+      </label>
+      <br><br>
+      <input type="submit" value="Izracunaj">
+    </form>
+
+  <script>
+    function leadingZero(n) {
+      return n < 10 ? '0' + n : n;
+    }
+
+    function izracunajGodine(event) {
+      event.preventDefault();
+
+      const dan = parseInt(document.getElementById('dan').value);
+      const mjesec = parseInt(document.getElementById('mjesec').value) - 1; // JS mjeseci su 0-11
+      const godina = parseInt(document.getElementById('godina').value);
+
+      const danas = new Date();
+      const datumRodjenja = new Date(godina, mjesec, dan);
+
+      let godine = danas.getFullYear() - datumRodjenja.getFullYear();
+      const mjesecDanas = danas.getMonth();
+      const danDanas = danas.getDate();
+
+      if (
+        mjesecDanas < mjesec ||
+        (mjesecDanas === mjesec && danDanas < dan)
+      ) {
+        godine--;
+      }
+
+      alert("Imate " + godine + " godina.");
+    }
+  </script>
+</body>
+</html>

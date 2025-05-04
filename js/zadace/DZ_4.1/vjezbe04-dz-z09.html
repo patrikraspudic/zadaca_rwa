@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcije</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function SavrseniBrojevi(n) {
+        for (let i = 1; i <= n; i++) {
+          let zbrojDjelitelja = 0;
+          for (let j = 1; j < i; j++) {
+            if (i % j === 0) {
+              zbrojDjelitelja += j;
+            }
+          }
+          if (zbrojDjelitelja === i) {
+            console.log(i);
+            document.write(i + "<br />");
+          }
+        }
+      }
+
+      SavrseniBrojevi(10000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!--
+Napravite HTML dokument s  potrebnim JS dijelom koji će izračunati aritmetičku sredinu prirodnih brojeva od 1 do n. Broj n se unese kroz prompt dijalog koji se korisniku prikaže nakon prvog učitavanja stranice, nakon toga izračuna se aritmetička sredina i ispiše u html dokumentu 
+-->
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Uvod</title>
+</head>
+<body>
+    <script>
+        let n = prompt("Unesite broj n: ");
+        let suma = 0;
+        let i = 1;
+        while(i <= n){
+            suma += i;
+            i++;
+        }
+        document.write("Aritmetička sredina: " + (suma / n) + "<br>");
+    </script>
+</body>
+</html>

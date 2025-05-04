@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Osnove</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let Broj = 19;
+        let Niz1 = "Niz znakova";
+        let Niz2 = "3.14"
+        let Niz3 = "U dva <br> retka"
+        let Logicka = true;
+        document.write(Broj,"<br>" + Niz1,"<br>"+Niz2,"<br>"+Niz3,"<br>"+Logicka);
+        Logicka = false;
+        document.write("<br>"+Logicka);    
+    </script>
+    <script type="text/javascript">
+        for(let i = 1;i <= 100;i++){
+            console.log(i);
+            document.write(i + "<br>");
+        }
+    </script>
+    <script type="text/javascript">
+        let i = 1;
+        while(i <= 100) {
+            if(i % 2 === 0){
+                console.log(i);
+                document.write(i + "<br>");
+            }
+            i++
+        }
+    </script>
+    <script type="text/javascript">
+        for(let i = 1;i <= 200;i++)
+        {
+            if(i % 2 === 0)
+            {
+                console.log(i);
+                document.write(i+"<br>");
+                console.log(i*i);
+                document.write(i*i+"<br>");
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        let n = 200;
+        let suma = 0;
+        for(i= 1;i <= n;i++){
+            console.log(i);
+            document.write(i + "<br>");
+            suma += i;
+        }
+
+        document.write("Aritmeticka sredina:"+(suma / n) + "<br>");
+    </script>
+    <script type="text/javascript">
+        let polje = new Array(1,2,3,4,7,8,5,6,9,55,74,11,33);
+        document.write(polje.length + "<br>");
+        polje.sort((a,b) => b - a);
+        for(let i = 0;i < polje.length;i++)
+        {
+            document.write(polje[i]+"<br>");
+        }
+        polje.sort((a,b) => a - b);
+        for(let i = 0;i < polje.length;i++){
+            document.write(polje[i]+"<br>");
+        }   
+        polje.pop();
+        document.write(polje+"<br>");
+        polje.push(19,22);
+        document.write(polje+"<br>");
+        let polje2 = new Array("Banana","Orange","Apple","Mango");
+        let polje_final = polje.concat(polje2);
+        document.write(polje_final+"<br>");
+    </script>
+</body>
+</html>

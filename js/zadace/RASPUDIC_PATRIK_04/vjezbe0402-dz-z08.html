@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zadatak 8</title>
+</head>
+<body>
+  <form name="kalkulator">
+    <input type="text" id="operand1"> operand1<br><br>
+    <input type="text" id="operand2"> operand2<br><br>
+
+    <!-- Osnovne operacije -->
+    <input type="button" value="+" onclick="izracunaj('+')">
+    <input type="button" value="-" onclick="izracunaj('-')">
+    <input type="button" value="*" onclick="izracunaj('*')">
+    <input type="button" value="/" onclick="izracunaj('/')"><br><br>
+
+    <!-- Trigonometrija -->
+    <input type="button" value="sin" onclick="jedanOperand('sin')">
+    <input type="button" value="cos" onclick="jedanOperand('cos')">
+    <input type="button" value="tan" onclick="jedanOperand('tan')"><br><br>
+
+    <!-- Logaritmi -->
+    <input type="button" value="ln" onclick="jedanOperand('ln')">
+    <input type="button" value="log" onclick="jedanOperand('log')"><br><br>
+
+    <!-- Potencije -->
+    <input type="button" value="^2" onclick="jedanOperand('kvadrat')">
+    <input type="button" value="^3" onclick="jedanOperand('kub')">
+    <input type="button" value="^n" onclick="izracunaj('pow')">
+  </form>
+
+  <script>
+    function izracunaj(op) {
+      let op1 = parseFloat(document.getElementById("operand1").value);
+      let op2 = parseFloat(document.getElementById("operand2").value);
+      let rezultat;
+
+      if (isNaN(op1) || isNaN(op2)) {
+        alert("Unesite ispravne brojeve!");
+        return;
+      }
+
+      switch(op) {
+        case '+':
+          rezultat = op1 + op2;
+          break;
+        case '-':
+          rezultat = op1 - op2;
+          break;
+        case '*':
+          rezultat = op1 * op2;
+          break;
+        case '/':
+          if (op2 === 0) {
+            alert("Dijeljenje s nulom nije dozvoljeno!");
+            return;
+          }
+          rezultat = op1 / op2;
+          break;
+        case 'pow':
+          rezultat = Math.pow(op1, op2);
+          break;
+      }
+
+      alert("Rezultat: " + rezultat);
+    }
+
+    function jedanOperand(funkcija) {
+      let op1 = parseFloat(document.getElementById("operand1").value);
+      let rezultat;
+
+      if (isNaN(op1)) {
+        alert("Unesite ispravan broj za operand1!");
+        return;
+      }
+
+      switch(funkcija) {
+        case 'sin':
+          rezultat = Math.sin(op1);
+          break;
+        case 'cos':
+          rezultat = Math.cos(op1);
+          break;
+        case 'tan':
+          rezultat = Math.tan(op1);
+          break;
+        case 'ln':
+          if (op1 <= 0) {
+            alert("Prirodni logaritam nije definiran za taj broj!");
+            return;
+          }
+          rezultat = Math.log(op1);
+          break;
+        case 'log':
+          if (op1 <= 0) {
+            alert("Logaritam nije definiran za taj broj!");
+            return;
+          }
+          rezultat = Math.log10(op1);
+          break;
+        case 'kvadrat':
+          rezultat = Math.pow(op1, 2);
+          break;
+        case 'kub':
+          rezultat = Math.pow(op1, 3);
+          break;
+      }
+
+      alert("Rezultat: " + rezultat);
+    }
+  </script>
+</body>
+</html>

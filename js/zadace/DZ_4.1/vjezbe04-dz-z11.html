@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcije</title>
+</head>
+<body>
+    <script type="text/javascript">
+        const tempDay = ['2023-11-29', -1, 0, -0.5,0.5, 0, 1.2,1.8,2, 3, 4, 6, 9, 12, 7, 6, 6,8,5,4,2,3,2,1,0];
+        function obradi(arr) {
+        const datum = arr[0];
+        const temperature = arr.slice(1);
+
+        const minTemp = Math.min(...temperature);
+        const maxTemp = Math.max(...temperature);
+        const avgTemp = (
+          temperature.reduce((acc, curr) => acc + curr, 0) / temperature.length
+        ).toFixed(2);
+
+        console.log("Datum je: " + datum);
+        console.log("Minimalna temperatura je: " + minTemp);
+        console.log("Maksimalna temperatura je: " + maxTemp);
+        console.log("Prosjecna temperatura je: " + avgTemp);
+
+        document.write("Datum je: " + datum + "<br />");
+        document.write("Minimalna temperatura je: " + minTemp + "<br />");
+        document.write("Maksimalna temperatura je: " + maxTemp + "<br />");
+        document.write("Prosjecna temperatura je: " + avgTemp + "<br />");
+      }
+
+      obradi(tempDay);
+    </script>
+</body>
+</html>

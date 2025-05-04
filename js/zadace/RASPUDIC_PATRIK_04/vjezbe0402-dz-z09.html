@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadatak 9</title>
+</head>
+<body>
+    <img id="zarulja" src="assets/zarulja_off_2.png" alt="Žarulja">
+    <img id="prekidac" src="assets/off-removebg-preview.png" alt="Prekidač" onclick="promijeniStanje()">
+
+    <script>
+        let ukljuceno = false;
+        function promijeniStanje() {
+            ukljuceno = !ukljuceno;
+            document.getElementById("zarulja").src = ukljuceno ? "assets/zarulja_on_2.png" : "assets/zarulja_off_2.png";
+            document.getElementById("prekidac").src = ukljuceno ? "assets/on-removebg-preview.png" : "assets/off-removebg-preview.png";
+        }
+    </script>
+</body>
+</html>

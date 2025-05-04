@@ -1,0 +1,32 @@
+<!--
+Napisati JS funkciju koja za zadan ulazno polje (array of strings), kreira novo polje (array of strings) i ispiše ga, a koje sadrži samo one vrijednost(nizove) unutar polja s velikim slovima(najmanje 1) ili vrijednosti koji su sadržavali 5 ili više slova/brojeva;
+•	Primjer polja
+var arr = [‘Ovo', 'je', 'My', ‘prvi', ‘komad', 'OF', ‘JAVASCRIPT', 'koda', 'Koji', ', 'je'', ‘proradio'];
+
+-->
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcije</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function filtrirajPolje(arr) {
+            const novoPolje = arr.filter(item => {
+                const imaVelikoSlovo = /[A-Z]/.test(item);
+                const imaPetIliViseZnakova = item.length >= 5;
+                return imaVelikoSlovo || imaPetIliViseZnakova;
+            });
+
+            console.log("Novo polje:", novoPolje);
+            return novoPolje;
+        }
+
+        var arr = ['Ovo', 'je', 'My', 'prvi', 'komad', 'OF', 'JAVASCRIPT', 'koda', 'Koji', 'je', 'proradio'];
+
+        filtrirajPolje(arr);
+    </script>
+</body>
+</html>
